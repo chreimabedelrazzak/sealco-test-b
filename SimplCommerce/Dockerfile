@@ -86,7 +86,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy output from build stage
-COPY --from=build-env /app/src/SimplCommerce.WebHost/out ./
+COPY --from=build-env /app/out ./
 COPY --from=build-env /app/src/SimplCommerce.WebHost/dbscript.sql ./
 
 # Ensure entrypoint script is accessible
